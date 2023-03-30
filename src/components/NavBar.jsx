@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar } from "@mui/material";
+import { AppBar, Link } from "@mui/material";
 // import AppBar from '@mui/material/AppBar';
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,10 +11,10 @@ const NavBar = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+          <Typography variant="h4" component="div">
+            Shortly
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Link href="#">Link</Link>
         </Toolbar>
       </AppBar>
     </Box>
