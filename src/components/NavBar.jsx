@@ -1,20 +1,32 @@
 import React from "react";
-import { AppBar, Link } from "@mui/material";
-// import AppBar from '@mui/material/AppBar';
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Box,
+  Link,
+  Button,
+  Stack,
+} from "@mui/material";
 
 const NavBar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h4" component="div">
-            Shortly
-          </Typography>
+          <Typography variant="h5">Shortly</Typography>
           <Link href="#">Link</Link>
+          <Stack direction={"row"} spacing={2} sx={{ flexGrow: 1 }}>
+            <Button color="inherit">Features</Button>
+            <Button color="inherit">Pricing</Button>
+            <Button color="inherit">Resources</Button>
+          </Stack>
+          <Stack direction={"row"} spacing={2}>
+            <Button color="inherit">Login</Button>
+            <Button variant="contained" color="inherit">
+              Sign Up
+            </Button>
+          </Stack>
         </Toolbar>
       </AppBar>
     </Box>
