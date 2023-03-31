@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactComponent as Logo } from "../images/Shortly.svg";
 import {
   AppBar,
   Toolbar,
@@ -7,6 +8,7 @@ import {
   ButtonGroup,
   Button,
   Stack,
+  IconButton,
 } from "@mui/material";
 
 const NavBar = () => {
@@ -14,9 +16,9 @@ const NavBar = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h5" sx={{ mr: 4 }}>
-            Shortly
-          </Typography>
+          <IconButton variant="h5" sx={{ mr: 4 }}>
+            <Logo />
+          </IconButton>
           <Stack
             display={"block"}
             direction={"row"}
