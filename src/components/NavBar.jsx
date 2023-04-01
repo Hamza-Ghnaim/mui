@@ -37,7 +37,7 @@ const NavBar = () => {
               </Button>
             </ButtonGroup>
           </Stack>
-          <Stack direction={"row"} spacing={4}>
+          <Stack direction={"row"} spacing={2}>
             <Button style={{ fontSize: "9px" }} size="small" color="inherit">
               Login
             </Button>
