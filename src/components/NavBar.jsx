@@ -11,11 +11,14 @@ import {
   IconButton,
 } from "@mui/material";
 
-const NavBar = () => {
+const NavBar = ({ theme }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: theme.palette.primary.main }}
+      >
+        <Toolbar sx={{}}>
           <IconButton variant="h5" sx={{ mr: 4 }}>
             <Logo />
           </IconButton>
