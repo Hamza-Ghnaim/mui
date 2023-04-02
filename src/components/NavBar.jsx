@@ -48,6 +48,10 @@ const NavBar = ({ theme }) => {
                 borderRadius: 28,
                 bgcolor: theme.palette.primary.main,
                 color: "#ffffff",
+                "&:hover": {
+                  backgroundColor: "#bbdefb",
+                  color: "#ffffff",
+                },
               }}
             >
               Sign Up
