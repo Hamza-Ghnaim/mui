@@ -1,8 +1,12 @@
 import { Box, Container, ThemeProvider, createTheme } from "@mui/material";
 import "./App.css";
+import "typeface-poppins";
 import NavBar from "./components/NavBar";
 
 const theme = createTheme({
+  typography: {
+    fontFamily: '"Poppins", sans-serif',
+  },
   palette: {
     primary: {
       main: "#2acfcf",

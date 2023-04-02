@@ -1,20 +1,11 @@
 import React from "react";
 import { ReactComponent as Logo } from "../images/Shortly.svg";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Box,
-  ButtonGroup,
-  Button,
-  Stack,
-  IconButton,
-} from "@mui/material";
+import { AppBar, Toolbar, Box, Button, Stack, IconButton } from "@mui/material";
 
 const NavBar = ({ theme }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" elevation={0}>
         <Toolbar sx={{ backgroundColor: "#ffffff" }}>
           <IconButton variant="h5" sx={{ mr: 4 }}>
             <Logo />
@@ -25,26 +16,39 @@ const NavBar = ({ theme }) => {
             spacing={2}
             sx={{ flexGrow: 1 }}
           >
-            <Button style={{ fontSize: "9px" }} color="inherit">
+            <Button
+              sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
+            >
               Features
             </Button>
-            <Button style={{ fontSize: "9px" }} color="inherit">
+            <Button
+              sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
+            >
               Pricing
             </Button>
-            <Button style={{ fontSize: "9px" }} color="inherit">
+            <Button
+              sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
+            >
               Resources
             </Button>
           </Stack>
           <Stack direction={"row"} spacing={2}>
-            <Button style={{ fontSize: "9px" }} size="small" color="inherit">
+            <Button
+              sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
+              size="medium"
+            >
               Login
             </Button>
             <Button
-              style={{ fontSize: "9px" }}
-              size="small"
+              size="medium"
               variant="contained"
               color="inherit"
-              sx={{ borderRadius: 28 }}
+              sx={{
+                fontSize: "10px",
+                borderRadius: 28,
+                bgcolor: theme.palette.primary.main,
+                color: "#ffffff",
+              }}
             >
               Sign Up
             </Button>
