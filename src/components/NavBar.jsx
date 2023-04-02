@@ -14,31 +14,26 @@ import {
 const NavBar = ({ theme }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar
-        position="static"
-        sx={{ backgroundColor: theme.palette.primary.main }}
-      >
-        <Toolbar sx={{}}>
+      <AppBar position="static">
+        <Toolbar sx={{ backgroundColor: "#ffffff" }}>
           <IconButton variant="h5" sx={{ mr: 4 }}>
             <Logo />
           </IconButton>
           <Stack
             display={"block"}
             direction={"row"}
-            spacing={3}
+            spacing={2}
             sx={{ flexGrow: 1 }}
           >
-            <ButtonGroup variant="text">
-              <Button style={{ fontSize: "9px" }} color="inherit">
-                Features
-              </Button>
-              <Button style={{ fontSize: "9px" }} color="inherit">
-                Pricing
-              </Button>
-              <Button style={{ fontSize: "9px" }} color="inherit">
-                Resources
-              </Button>
-            </ButtonGroup>
+            <Button style={{ fontSize: "9px" }} color="inherit">
+              Features
+            </Button>
+            <Button style={{ fontSize: "9px" }} color="inherit">
+              Pricing
+            </Button>
+            <Button style={{ fontSize: "9px" }} color="inherit">
+              Resources
+            </Button>
           </Stack>
           <Stack direction={"row"} spacing={2}>
             <Button style={{ fontSize: "9px" }} size="small" color="inherit">
