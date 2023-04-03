@@ -15,6 +15,8 @@ import {
   ListItemText,
 } from "@mui/material";
 
+import "./navbar.css";
+
 const NavBar = ({ theme }) => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -32,60 +34,62 @@ const NavBar = ({ theme }) => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" elevation={0}>
+      <AppBar position="static" elevation={0} className="appbar">
         <Toolbar sx={{ backgroundColor: "#ffffff" }}>
           <IconButton variant="h5" sx={{ mr: 4 }}>
             <Logo />
           </IconButton>
           {isMobile ? (
-            <IconButton onClick={toggleDrawer(true)}>
+            <IconButton onClick={toggleDrawer(true)} sx={{ outline: "none" }}>
               <MenuIcon />
             </IconButton>
           ) : (
-            <Stack
-              display={"block"}
-              direction={"row"}
-              spacing={2}
-              sx={{ flexGrow: 1 }}
-            >
-              <Button
-                sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
+            <>
+              <Stack
+                display={"block"}
+                direction={"row"}
+                spacing={2}
+                sx={{ flexGrow: 1 }}
               >
-                Features
-              </Button>
-              <Button
-                sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
-              >
-                Pricing
-              </Button>
-              <Button
-                sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
-              >
-                Resources
-              </Button>
-            </Stack>
+                <Button
+                  sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
+                >
+                  Features
+                </Button>
+                <Button
+                  sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
+                >
+                  Pricing
+                </Button>
+                <Button
+                  sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
+                >
+                  Resources
+                </Button>
+              </Stack>
+              <Stack direction={"row"} spacing={2}>
+                <Button
+                  sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
+                  size="medium"
+                >
+                  Login
+                </Button>
+                <Button
+                  size="medium"
+                  variant="contained"
+                  color="inherit"
+                  sx={{
+                    fontSize: "10px",
+                    borderRadius: 28,
+                    bgcolor: theme.palette.primary.main,
+                    color: "#ffffff",
+                  }}
+                >
+                  Sign Up
+                </Button>
+              </Stack>
+            </>
           )}
-          <Stack direction={"row"} spacing={2}>
-            <Button
-              sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
-              size="medium"
-            >
-              Login
-            </Button>
-            <Button
-              size="medium"
-              variant="contained"
-              color="inherit"
-              sx={{
-                fontSize: "10px",
-                borderRadius: 28,
-                bgcolor: theme.palette.primary.main,
-                color: "#ffffff",
-              }}
-            >
-              Sign Up
-            </Button>
-          </Stack>
         </Toolbar>
       </AppBar>
       <Drawer anchor="right" open={openDrawer} onClose={toggleDrawer(false)}>
