@@ -32,7 +32,12 @@ const NavBar = ({ theme }) => {
             backgroundColor: "#ffffff",
           }}
         >
-          <IconButton variant="h5" sx={{ mr: 3 }}>
+          <IconButton
+            variant="h5"
+            sx={{
+              mr: 3,
+            }}
+          >
             <Logo />
           </IconButton>
           {isMobile ? (
@@ -133,24 +138,56 @@ const NavBar = ({ theme }) => {
                 sx={{ flexGrow: 1 }}
               >
                 <Button
-                  sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
+                  sx={{
+                    fontWeight: 700,
+                    fontSize: "10px",
+                    color: theme.palette.neutral.main,
+                    "&:hover": {
+                      color: "black",
+                      bgcolor: "#ffffff",
+                    },
+                  }}
                 >
                   Features
                 </Button>
                 <Button
-                  sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
+                  sx={{
+                    fontWeight: 700,
+                    fontSize: "10px",
+                    color: theme.palette.neutral.main,
+                    "&:hover": {
+                      color: "black",
+                      bgcolor: "#ffffff",
+                    },
+                  }}
                 >
                   Pricing
                 </Button>
                 <Button
-                  sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
+                  sx={{
+                    fontWeight: 700,
+                    fontSize: "10px",
+                    color: theme.palette.neutral.main,
+                    "&:hover": {
+                      color: "black",
+                      bgcolor: "#ffffff",
+                    },
+                  }}
                 >
                   Resources
                 </Button>
               </Stack>
               <Stack direction={"row"} spacing={2}>
                 <Button
-                  sx={{ fontSize: "10px", color: theme.palette.neutral.main }}
+                  sx={{
+                    fontSize: "10px",
+                    color: theme.palette.neutral.main,
+                    fontWeight: 700,
+                    "&:hover": {
+                      color: "black",
+                      bgcolor: "#ffffff",
+                    },
+                  }}
                   size="medium"
                 >
                   Login
@@ -160,10 +197,16 @@ const NavBar = ({ theme }) => {
                   variant="contained"
                   color="inherit"
                   sx={{
+                    fontWeight: 700,
                     fontSize: "10px",
                     borderRadius: 28,
                     bgcolor: theme.palette.primary.main,
                     color: "#ffffff",
+                    boxShadow: 0,
+                    "&:hover": {
+                      bgcolor: "#b2ebf2",
+                      boxShadow: 0,
+                    },
                   }}
                 >
                   Sign Up
