@@ -19,7 +19,7 @@ import "./navbar.css";
 
 const NavBar = ({ theme }) => {
   const [openDrawer, setOpenDrawer] = useState(false);
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery("(max-width: 375px)");
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -35,12 +35,17 @@ const NavBar = ({ theme }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" elevation={0} className="appbar">
-        <Toolbar sx={{ backgroundColor: "#ffffff" }}>
+        <Toolbar
+          sx={{ justifyContent: "space-between", backgroundColor: "#ffffff" }}
+        >
           <IconButton variant="h5" sx={{ mr: 4 }}>
             <Logo />
           </IconButton>
           {isMobile ? (
-            <IconButton onClick={toggleDrawer(true)} sx={{ outline: "none" }}>
+            <IconButton
+              onClick={toggleDrawer(true)}
+              sx={{ outline: "none", ml: "auto" }}
+            >
               <MenuIcon />
             </IconButton>
           ) : (
