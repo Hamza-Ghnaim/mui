@@ -13,6 +13,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  Divider,
 } from "@mui/material";
 
 import "./navbar.css";
@@ -37,7 +38,7 @@ const NavBar = ({ theme }) => {
           {isMobile ? (
             <>
               <IconButton
-                onClick={() => setOpenModal(true)}
+                onClick={() => setOpenModal(!openModal)}
                 sx={{ outline: "none", ml: "auto" }}
               >
                 <MenuIcon />
@@ -46,33 +47,71 @@ const NavBar = ({ theme }) => {
                 <Box
                   sx={{
                     position: "absolute",
-                    top: "50%",
+                    top: "41%",
                     left: "50%",
                     transform: "translate(-50%, -50%)",
-                    width: "80vw",
+                    width: "75vw",
+                    height: "58vh",
                     maxWidth: 400,
                     bgcolor: theme.palette.primary.dark,
                     color: "#ffffff",
+                    borderRadius: 3,
                   }}
                 >
                   <List>
-                    <ListItem Button>
+                    <ListItem
+                      Button
+                      sx={{
+                        textAlign: "center",
+                      }}
+                    >
                       <ListItemText primary="Features" />
                     </ListItem>
-                    <ListItem Button>
+                    <ListItem
+                      Button
+                      sx={{
+                        textAlign: "center",
+                      }}
+                    >
                       <ListItemText primary="Pricing" />
                     </ListItem>
-                    <ListItem Button>
+                    <ListItem
+                      Button
+                      sx={{
+                        mb: 1,
+                        textAlign: "center",
+                      }}
+                    >
                       <ListItemText primary="Resources" />
                     </ListItem>
-                    <ListItem Button>
+                    <Divider
+                      sx={{ backgroundColor: theme.palette.neutral.main }}
+                      variant="middle"
+                      light
+                    />
+                    <ListItem
+                      Button
+                      sx={{
+                        mt: 1,
+                        textAlign: "center",
+                      }}
+                    >
                       <ListItemText primary="Login" />
                     </ListItem>
-                    <ListItem Button>
+                    <ListItem
+                      Button
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        textAlign: "center",
+                      }}
+                    >
                       <Button
                         variant="contained"
                         color="inherit"
                         sx={{
+                          pr: 12,
+                          pl: 12,
                           borderRadius: 28,
                           bgcolor: theme.palette.primary.main,
                           color: "#ffffff",
