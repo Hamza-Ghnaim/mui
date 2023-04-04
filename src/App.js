@@ -1,6 +1,8 @@
 import { Box, Container, ThemeProvider, createTheme } from "@mui/material";
 import "./App.css";
 import "typeface-poppins";
+
+import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 
 const theme = createTheme({
@@ -30,8 +32,7 @@ function App() {
       <Container>
         <NavBar theme={theme} />
         <Box>
-          <h1>2</h1>
-          <h1>2</h1>
+          <Header />
         </Box>
       </Container>
     </ThemeProvider>
