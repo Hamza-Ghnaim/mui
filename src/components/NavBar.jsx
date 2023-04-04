@@ -19,27 +19,19 @@ import "./navbar.css";
 
 const NavBar = ({ theme }) => {
   const [openModal, setOpenModal] = useState(false);
-  const [openDrawer, setOpenDrawer] = useState(false);
   const isMobile = useMediaQuery("(max-width: 375px)");
-
-  const toggleDrawer = (open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
-    setOpenDrawer(open);
-  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" elevation={0} className="appbar">
         <Toolbar
-          sx={{ justifyContent: "space-between", backgroundColor: "#ffffff" }}
+          sx={{
+            justifyContent: "space-between",
+            alignItems: "center",
+            backgroundColor: "#ffffff",
+          }}
         >
-          <IconButton variant="h5" sx={{ mr: 4 }}>
+          <IconButton variant="h5" sx={{ mr: 3 }}>
             <Logo />
           </IconButton>
           {isMobile ? (
@@ -59,9 +51,8 @@ const NavBar = ({ theme }) => {
                     transform: "translate(-50%, -50%)",
                     width: "80vw",
                     maxWidth: 400,
-                    bgcolor: "background.paper",
-                    boxShadow: 24,
-                    p: 2,
+                    bgcolor: theme.palette.primary.dark,
+                    color: "#ffffff",
                   }}
                 >
                   <List>
@@ -143,35 +134,6 @@ const NavBar = ({ theme }) => {
           )}
         </Toolbar>
       </AppBar>
-      <Modal anchor="right" open={openDrawer} onClose={toggleDrawer(false)}>
-        <List>
-          <ListItem Button>
-            <ListItemText primary="Features" />
-          </ListItem>
-          <ListItem Button>
-            <ListItemText primary="Pricing" />
-          </ListItem>
-          <ListItem Button>
-            <ListItemText primary="Resources" />
-          </ListItem>
-          <ListItem Button>
-            <ListItemText primary="Login" />
-          </ListItem>
-          <ListItem Button>
-            <Button
-              variant="contained"
-              color="inherit"
-              sx={{
-                borderRadius: 28,
-                bgcolor: theme.palette.primary.main,
-                color: "#ffffff",
-              }}
-            >
-              Sign Up
-            </Button>
-          </ListItem>
-        </List>
-      </Modal>
     </Box>
   );
 };
