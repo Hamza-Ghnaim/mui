@@ -9,7 +9,7 @@ import {
   Stack,
   IconButton,
   useMediaQuery,
-  Drawer,
+  Modal,
   List,
   ListItem,
   ListItemText,
@@ -18,6 +18,7 @@ import {
 import "./navbar.css";
 
 const NavBar = ({ theme }) => {
+  const [openModal, setOpenModal] = useState(false);
   const [openDrawer, setOpenDrawer] = useState(false);
   const isMobile = useMediaQuery("(max-width: 375px)");
 
@@ -42,12 +43,57 @@ const NavBar = ({ theme }) => {
             <Logo />
           </IconButton>
           {isMobile ? (
-            <IconButton
-              onClick={toggleDrawer(true)}
-              sx={{ outline: "none", ml: "auto" }}
-            >
-              <MenuIcon />
-            </IconButton>
+            <>
+              <IconButton
+                onClick={() => setOpenModal(true)}
+                sx={{ outline: "none", ml: "auto" }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Modal open={openModal} onClose={() => setOpenModal(false)}>
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    width: "80vw",
+                    maxWidth: 400,
+                    bgcolor: "background.paper",
+                    boxShadow: 24,
+                    p: 2,
+                  }}
+                >
+                  <List>
+                    <ListItem Button>
+                      <ListItemText primary="Features" />
+                    </ListItem>
+                    <ListItem Button>
+                      <ListItemText primary="Pricing" />
+                    </ListItem>
+                    <ListItem Button>
+                      <ListItemText primary="Resources" />
+                    </ListItem>
+                    <ListItem Button>
+                      <ListItemText primary="Login" />
+                    </ListItem>
+                    <ListItem Button>
+                      <Button
+                        variant="contained"
+                        color="inherit"
+                        sx={{
+                          borderRadius: 28,
+                          bgcolor: theme.palette.primary.main,
+                          color: "#ffffff",
+                        }}
+                      >
+                        Sign Up
+                      </Button>
+                    </ListItem>
+                  </List>
+                </Box>
+              </Modal>
+            </>
           ) : (
             <>
               <Stack
@@ -97,7 +143,7 @@ const NavBar = ({ theme }) => {
           )}
         </Toolbar>
       </AppBar>
-      <Drawer anchor="right" open={openDrawer} onClose={toggleDrawer(false)}>
+      <Modal anchor="right" open={openDrawer} onClose={toggleDrawer(false)}>
         <List>
           <ListItem Button>
             <ListItemText primary="Features" />
@@ -125,7 +171,7 @@ const NavBar = ({ theme }) => {
             </Button>
           </ListItem>
         </List>
-      </Drawer>
+      </Modal>
     </Box>
   );
 };
