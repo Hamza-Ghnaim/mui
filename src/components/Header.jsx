@@ -17,13 +17,13 @@ const Header = ({ theme }) => {
         <Grid item xs={6}>
           <Card sx={{ minWidth: 275, boxShadow: "none", borderRadius: "none" }}>
             <CardContent>
-              <Typography variant="h2" fontWeight="bold" sx={{ mt: 4, mb: 1 }}>
+              <Typography variant="h2" fontWeight="bold" sx={{ mt: 9, mb: 1 }}>
                 More than just
                 <br />
                 shorter links
               </Typography>
 
-              <Typography variant="body2" sx={{ mb: 2 }}>
+              <Typography variant="body2" sx={{ mb: 2, color: theme }}>
                 Build your brand's recognition and get detailed
                 <br />
                 insights on how your links are performing
@@ -51,7 +51,13 @@ const Header = ({ theme }) => {
             <img
               src={require("../images/working.svg").default}
               alt="My Image"
-              style={{ maxWidth: "100%" }}
+              style={{
+                width: "50%",
+                maxWidth: "100%",
+                position: "absolute",
+                right: -120,
+                bottom: 60,
+              }}
             />
           </Paper>
         </Grid>
