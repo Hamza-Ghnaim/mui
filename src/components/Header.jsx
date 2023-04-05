@@ -15,7 +15,15 @@ const Header = ({ theme }) => {
     <Box>
       <Grid container spacing={2}>
         <Grid item xs={6}>
-          <Card sx={{ minWidth: 275, boxShadow: "none", borderRadius: "none" }}>
+          <Card
+            sx={{
+              minWidth: 275,
+              boxShadow: "none",
+              borderRadius: "none",
+              mt: 3,
+              ml: 2,
+            }}
+          >
             <CardContent>
               <Typography variant="h2" fontWeight="bold" sx={{ mt: 9, mb: 1 }}>
                 More than just
@@ -23,7 +31,14 @@ const Header = ({ theme }) => {
                 shorter links
               </Typography>
 
-              <Typography variant="body2" sx={{ mb: 2, color: theme }}>
+              <Typography
+                variant="body2"
+                sx={{
+                  mb: 2,
+                  color: theme,
+                  color: theme.palette.neutral.main,
+                }}
+              >
                 Build your brand's recognition and get detailed
                 <br />
                 insights on how your links are performing
@@ -39,6 +54,11 @@ const Header = ({ theme }) => {
                   borderRadius: 28,
                   bgcolor: theme.palette.primary.main,
                   color: "#ffffff",
+                  boxShadow: 0,
+                  "&:hover": {
+                    bgcolor: "#b2ebf2",
+                    boxShadow: 0,
+                  },
                 }}
               >
                 Get Started
@@ -52,11 +72,11 @@ const Header = ({ theme }) => {
               src={require("../images/working.svg").default}
               alt="My Image"
               style={{
-                width: "50%",
+                width: "48%",
                 maxWidth: "100%",
                 position: "absolute",
-                right: -120,
-                bottom: 60,
+                right: -110,
+                bottom: 90,
               }}
             />
           </Paper>
