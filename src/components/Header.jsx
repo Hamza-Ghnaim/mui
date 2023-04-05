@@ -1,10 +1,61 @@
-import { Box, Typography } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Grid,
+  Paper,
+  Card,
+  CardContent,
+  CardActions,
+  Button,
+} from "@mui/material";
 import React from "react";
 
 const Header = ({ theme }) => {
   return (
     <Box>
-      <Typography>This is the header</Typography>
+      <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <Card sx={{ minWidth: 275, boxShadow: "none", borderRadius: "none" }}>
+            <CardContent>
+              <Typography variant="h2" fontWeight="bold" sx={{ mt: 4, mb: 1 }}>
+                More than just
+                <br />
+                shorter links
+              </Typography>
+
+              <Typography variant="body2" sx={{ mb: 2 }}>
+                Build your brand's recognition and get detailed
+                <br />
+                insights on how your links are performing
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button
+                variant="contained"
+                color="inherit"
+                sx={{
+                  pr: 4,
+                  pl: 4,
+                  borderRadius: 28,
+                  bgcolor: theme.palette.primary.main,
+                  color: "#ffffff",
+                }}
+              >
+                Get Started
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+        <Grid item xs={6}>
+          <Paper elevation={0}>
+            <img
+              src={require("../images/working.svg").default}
+              alt="My Image"
+              style={{ maxWidth: "100%" }}
+            />
+          </Paper>
+        </Grid>
+      </Grid>
     </Box>
   );
 };

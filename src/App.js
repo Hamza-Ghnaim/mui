@@ -5,7 +5,7 @@ import "typeface-poppins";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 
-const theme = createTheme({
+export const theme = createTheme({
   typography: {
     fontFamily: '"Poppins", sans-serif',
   },
@@ -31,9 +31,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Container>
         <NavBar theme={theme} />
-        <Box>
-          <Header />
-        </Box>
+        <Header theme={theme} />
       </Container>
     </ThemeProvider>
   );
