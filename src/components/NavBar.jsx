@@ -55,7 +55,7 @@ const NavBar = ({ theme }) => {
                     top: "41%",
                     left: "50%",
                     transform: "translate(-50%, -50%)",
-                    width: "75vw",
+                    width: "86vw",
                     height: "58vh",
                     maxWidth: 400,
                     bgcolor: theme.palette.primary.dark,

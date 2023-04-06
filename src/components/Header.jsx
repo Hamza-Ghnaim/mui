@@ -26,7 +26,7 @@ const Header = ({ theme }) => {
                   src={require("../images/working.svg").default}
                   alt="My Image"
                   style={{
-                    width: "140%",
+                    width: "146%",
                     maxWidth: "150%",
                     position: "relative",
                   }}
