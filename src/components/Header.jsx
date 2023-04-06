@@ -12,6 +12,7 @@ import {
 import React from "react";
 
 const Header = ({ theme }) => {
+  const x = <br />;
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
@@ -39,7 +40,7 @@ const Header = ({ theme }) => {
               >
                 <CardContent>
                   <Typography
-                    variant="h2"
+                    variant="h4"
                     fontWeight="bold"
                     sx={{ mt: 4, mb: 1 }}
                   >
@@ -48,10 +49,17 @@ const Header = ({ theme }) => {
                     shorter links
                   </Typography>
 
-                  <Typography variant="body2" sx={{ mb: 2, color: theme }}>
-                    Build your brand's recognition and get detailed
-                    <br />
-                    insights on how your links are performing
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      mb: 2,
+                      color: theme.palette.neutral.main,
+                      fontWeight: 500,
+                    }}
+                  >
+                    {isSmallScreen
+                      ? `Build your brand's recognition and\nget detailed insights on how your\nlinks are performing`
+                      : `Build your brand's recognition and get detailed\ninsights on how your links are performing`}
                   </Typography>
                 </CardContent>
                 <CardActions sx={{ justifyContent: "center" }}>
