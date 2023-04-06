@@ -16,7 +16,7 @@ const Header = ({ theme }) => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Box>
+    <Box sx={{ overflow: "hidden" }}>
       <Grid container spacing={2}>
         {isSmallScreen ? (
           <>
@@ -25,7 +25,11 @@ const Header = ({ theme }) => {
                 <img
                   src={require("../images/working.svg").default}
                   alt="My Image"
-                  style={{ maxWidth: "100%" }}
+                  style={{
+                    width: "140%",
+                    maxWidth: "150%",
+                    position: "relative",
+                  }}
                 />
               </Paper>
             </Grid>
@@ -72,6 +76,11 @@ const Header = ({ theme }) => {
                       borderRadius: 28,
                       bgcolor: theme.palette.primary.main,
                       color: "#ffffff",
+                      boxShadow: 0,
+                      "&:hover": {
+                        bgcolor: "#b2ebf2",
+                        boxShadow: 0,
+                      },
                     }}
                   >
                     Get Started
