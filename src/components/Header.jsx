@@ -12,7 +12,6 @@ import {
 import React from "react";
 
 const Header = ({ theme }) => {
-  const x = <br />;
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
