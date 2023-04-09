@@ -8,9 +8,10 @@ const Boost = ({ theme }) => {
     <Box
       sx={{
         transform: "translateY(-7.5%)",
-        backgroundImage: `url(${
-          require("../images/boostDesktop.svg").default
-        })`,
+        backgroundImage: isSmallScreen
+          ? `url(${require("../images/boostMobile.svg").default})`
+          : `url(${require("../images/boostDesktop.svg").default})`,
+        backgroundRepeat: "no-repeat",
         height: "250px",
         bgcolor: theme.palette.primary.dark,
         display: "flex",
