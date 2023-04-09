@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import Summit from "./components/Summit";
 import Boost from "./components/Boost";
 import Footer from "./components/Footer";
+import Overlay from "./components/Overlay";
 
 export const theme = createTheme({
   typography: {
@@ -35,6 +36,7 @@ function App() {
       <Container>
         <NavBar theme={theme} />
         <Header theme={theme} />
+        <Overlay theme={theme} />
       </Container>
       <Summit theme={theme} />
       <Boost theme={theme} />
