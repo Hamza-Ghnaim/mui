@@ -45,7 +45,7 @@ const Overlay = ({ theme }) => {
         size="large"
         color="inherit"
         sx={{
-          width: isSmallScreen && "90%",
+          width: isSmallScreen ? "90%" : "160px",
           height: isSmallScreen ? "56px" : "56px",
           pr: 4,
           pl: 4,
