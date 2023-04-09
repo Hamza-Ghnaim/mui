@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Grid, Typography, IconButton, Stack } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Typography,
+  IconButton,
+  Stack,
+  useMediaQuery,
+} from "@mui/material";
 import { ReactComponent as Logo } from "../images/Shortly.svg";
 import { ReactComponent as Facebook } from "../images/facebook.svg";
 import { ReactComponent as Twitter } from "../images/twitter.svg";
@@ -7,6 +14,8 @@ import { ReactComponent as Pinitrist } from "../images/pentrest.svg";
 import { ReactComponent as Instagram } from "../images/instagram.svg";
 
 const Footer = ({ theme }) => {
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Box
       sx={{
@@ -14,18 +23,22 @@ const Footer = ({ theme }) => {
         pb: 10,
       }}
     >
-      <Grid container spacing={4}>
-        <Grid item xs={3.5}>
-          <IconButton variant="h5" sx={{ ml: 16, mt: 3 }}>
+      <Grid container spacing={4} sx={{ display: "flex", flexWrap: "wrap" }}>
+        <Grid item xs={isSmallScreen ? 12 : 3.5}>
+          <IconButton
+            variant="h5"
+            sx={{ ml: isSmallScreen ? 14.5 : 20, mt: 3 }}
+          >
             <Logo color="white" />
-          </IconButton>{" "}
+          </IconButton>
         </Grid>
         <Grid
           item
-          xs={1.5}
+          xs={isSmallScreen ? 12 : 1.5}
           sx={{
             mt: 5,
-            ml: 12,
+            ml: isSmallScreen ? -0.5 : 12,
+            textAlign: isSmallScreen && "center",
           }}
         >
           <Typography fontWeight="bold" sx={{ color: "white", mb: 3 }}>
@@ -73,7 +86,15 @@ const Footer = ({ theme }) => {
             </Typography>
           </Stack>
         </Grid>
-        <Grid item xs={1.5} sx={{ mt: 5 }}>
+        <Grid
+          item
+          xs={isSmallScreen ? 12 : 1.5}
+          sx={{
+            mt: 5,
+            ml: isSmallScreen && -0.5,
+            textAlign: isSmallScreen && "center",
+          }}
+        >
           <Typography fontWeight="bold" sx={{ color: "white", mb: 3 }}>
             Resources
           </Typography>
@@ -119,7 +140,15 @@ const Footer = ({ theme }) => {
             </Typography>
           </Stack>
         </Grid>
-        <Grid item xs={1.5} sx={{ mt: 5 }}>
+        <Grid
+          item
+          xs={isSmallScreen ? 12 : 1.5}
+          sx={{
+            mt: 5,
+            ml: isSmallScreen && -0.5,
+            textAlign: isSmallScreen && "center",
+          }}
+        >
           <Typography fontWeight="bold" sx={{ color: "white", mb: 3 }}>
             Company
           </Typography>
@@ -178,8 +207,16 @@ const Footer = ({ theme }) => {
             </Typography>
           </Stack>
         </Grid>
-        <Grid item xs={1} sx={{ mt: 5 }}>
-          <Stack direction="row" spacing={0.5}>
+        <Grid
+          item
+          xs={isSmallScreen ? 12 : 1.5}
+          sx={{
+            mt: 5,
+            ml: isSmallScreen && -0.5,
+            textAlign: isSmallScreen && "center",
+          }}
+        >
+          <Stack direction="row" spacing={0.5} sx={{ ml: isSmallScreen && 12 }}>
             <IconButton variant="h5">
               <Facebook color="white" />
             </IconButton>
