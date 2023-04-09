@@ -5,6 +5,8 @@ import "typeface-poppins";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Summit from "./components/Summit";
+import Boost from "./components/Boost";
+import Footer from "./components/Footer";
 
 export const theme = createTheme({
   typography: {
@@ -35,6 +37,8 @@ function App() {
         <Header theme={theme} />
       </Container>
       <Summit theme={theme} />
+      <Boost theme={theme} />
+      <Footer theme={theme} />
     </ThemeProvider>
   );
 }

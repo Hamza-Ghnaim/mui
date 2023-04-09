@@ -167,7 +167,7 @@ const Summit = ({ theme }) => {
               spacing={12.5}
               direction="column"
               alignItems="center"
-              sx={{ mb: 90, textAlign: "center" }}
+              sx={{ mb: 10, textAlign: "center" }}
             >
               <Card sx={{ width: "300px", pt: 5 }}>
                 <CardContent>
